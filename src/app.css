@@ -1,0 +1,18 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Questlists-Icons';
+  src: 
+    url('/QuestLists-font/QuestLists-Icons.woff2') format('woff2'),
+    url('/QuestLists-font/QuestLists-Icons.woff') format('woff'),
+    url('/QuestLists-font/QuestLists-Icons.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
