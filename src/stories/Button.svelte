@@ -1,15 +1,22 @@
 <script lang="ts">
   /**
-   * @typedef {Object} Props
-   * @property {boolean} [primary] Whether this is a primary button
-   * @property {boolean} [loading] Whether the button is in a loading state
-   * @property {'small' | 'medium' | 'large'} [size] The size of the button
-   * @property {string} [backgroundColor] The background color
-   * @property {string} label The button's label
-   * @property {() => void} [onClick] Optional click handler
+   * Props for the Button component.
    */
+  interface ButtonProps {
+    /** Whether this is a primary button */
+    primary?: boolean;
+    /** Whether the button is in a loading state */
+    loading?: boolean;
+    /** The size of the button */
+    size?: 'small' | 'medium' | 'large';
+    /** The background color */
+    backgroundColor?: string;
+    /** The button's label */
+    label: string;
+    /** Optional click handler */
+    onClick?: () => void;
+  }
 
-  /** @type {Props} */
   const {
     primary = false,
     size = 'medium',
@@ -17,19 +24,19 @@
     backgroundColor,
     label,
     onClick,
-  } = $props();
+  }: ButtonProps = $props();
 
-  $: mode = primary ? 'primary' : 'secondary';
-  $: padding = {
+  let mode = $derived(primary ? 'primary' : 'secondary');
+  let padding = $derived({
     small: 'px-3 py-1.5',
     medium: 'px-4 py-2',
     large: 'px-6 py-3',
-  }[size];
-  $: fontSize = {
+  }[size]);
+  let fontSize = $derived({
     small: 'text-sm',
     medium: 'text-base',
     large: 'text-lg',
-  }[size];
+  }[size]);
 </script>
 
 <button
