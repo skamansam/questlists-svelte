@@ -1,15 +1,24 @@
 @import 'tailwindcss';
 
+/* Mirror the legacy `darkMode: "class"` behavior so dark: utilities respond to the
+   `.dark` class on <html> or any ancestor, including SSR-rendered markup. */
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Core Tailwind plugins that ship with Twintrinsic demos:
+   - Forms: normalizes inputs/selects.
+   - Typography: provides `.prose` for markdown renderers.
+   - Aspect ratio + container queries: required by the media-heavy tiles. */
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/aspect-ratio';
 @plugin '@tailwindcss/container-queries';
 
+/* Theme tokens migrated from tailwind.config.ts. Any value defined here is available
+   as both CSS variables (e.g. `var(--color-primary-500)`) and Tailwind utilities. */
 @theme {
 	--font-questlists: 'Questlists-Icons', sans-serif;
 
+	/* Primary color stack used for CTAs, highlighted stats, and accent gradients. */
 	--color-primary-50: #fffdf0;
 	--color-primary-100: #fff9d1;
 	--color-primary-200: #fff3a3;
@@ -22,6 +31,7 @@
 	--color-primary-900: #5c4a00;
 	--color-primary-950: #2e2500;
 
+	/* Secondary/accent stack used for interactive states and badges. */
 	--color-accent-50: #fdf4ff;
 	--color-accent-100: #fae8ff;
 	--color-accent-200: #f5d0fe;
@@ -34,6 +44,7 @@
 	--color-accent-900: #701a75;
 	--color-accent-950: #4a044e;
 
+	/* Neutral ramp applied to body text, borders, and card shells. */
 	--color-neutral-50: #fafafa;
 	--color-neutral-100: #f5f5f5;
 	--color-neutral-200: #e5e5e5;
@@ -46,6 +57,7 @@
 	--color-neutral-900: #171717;
 	--color-neutral-950: #0a0a0a;
 
+	/* Success ramp for positive states (toasts, progress, KPI deltas). */
 	--color-success-50: #f0fdf4;
 	--color-success-100: #dcfce7;
 	--color-success-200: #bbf7d0;
@@ -58,6 +70,7 @@
 	--color-success-900: #14532d;
 	--color-success-950: #052e16;
 
+	/* Warning ramp for transient caution / schedule alerts. */
 	--color-warning-50: #fff7ed;
 	--color-warning-100: #ffedd5;
 	--color-warning-200: #fed7aa;
@@ -70,6 +83,7 @@
 	--color-warning-900: #7c2d12;
 	--color-warning-950: #431407;
 
+	/* Error ramp for destructive actions and validation states. */
 	--color-error-50: #fef2f2;
 	--color-error-100: #fee2e2;
 	--color-error-200: #fecaca;
@@ -82,6 +96,7 @@
 	--color-error-900: #7f1d1d;
 	--color-error-950: #450a0a;
 
+	/* Light theme surfaces / text / borders. Mirrors former `light.surface.*` tokens. */
 	--color-light-surface-50: #ffffff;
 	--color-light-surface-100: #fafafa;
 	--color-light-surface-200: #f5f5f5;
@@ -93,6 +108,7 @@
 	--color-light-border-100: #d4d4d4;
 	--color-light-border-200: #a3a3a3;
 
+	/* Dark theme surfaces / text / borders used when `.dark` class is present. */
 	--color-dark-surface-50: #18181b;
 	--color-dark-surface-100: #1f1f23;
 	--color-dark-surface-200: #27272a;
@@ -104,6 +120,7 @@
 	--color-dark-border-100: #3f3f46;
 	--color-dark-border-200: #52525b;
 
+	/* Custom border radii. */
 	--radius-sm: 0.25rem;
 	--radius: 0.375rem;
 	--radius-md: 0.5rem;
@@ -111,14 +128,18 @@
 	--radius-xl: 1rem;
 	--radius-2xl: 1.5rem;
 
+	/* Additional spacing steps used by hero layouts and drawer shells. */
 	--spacing-18: 4.5rem;
 	--spacing-112: 28rem;
 	--spacing-128: 32rem;
 	--spacing-144: 36rem;
 
+	/* Custom inner shadow applied to cards with inset elevation. */
 	--shadow-inner-lg: inset 0 2px 4px 0 rgb(0 0 0 / 0.10);
 }
 
+/* Icon font from Questlists design kit — needs to live outside @theme so browsers
+   load it regardless of Tailwind compilation. */
 @font-face {
 	font-family: 'Questlists-Icons';
 	src:
