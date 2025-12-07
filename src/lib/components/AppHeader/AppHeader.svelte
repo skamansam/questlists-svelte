@@ -130,7 +130,7 @@
               href="#"
               class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
             >
-              <div class="flex-shrink-0">
+              <div class="shrink-0">
                 <Gravatar 
                   email="bonnie.green@example.com"
                   size={32}
@@ -175,7 +175,7 @@
               href="#"
               class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
             >
-              <div class="flex-shrink-0">
+              <div class="shrink-0">
                 <Gravatar 
                   email="jese.leos@example.com"
                   size={32}
@@ -221,7 +221,7 @@
               href="#"
               class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
             >
-              <div class="flex-shrink-0">
+              <div class="shrink-0">
                 <Gravatar 
                   email="joseph.mcfall@example.com"
                   size={32}
@@ -269,7 +269,7 @@
               href="#"
               class="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
             >
-              <div class="flex-shrink-0">
+              <div class="shrink-0">
                 <Gravatar 
                   email="roberta.casas@example.com"
                   size={32}
@@ -318,7 +318,7 @@
               href="#"
               class="flex py-3 px-4 hover:bg-gray-100 dark:hover:bg-gray-600"
             >
-              <div class="flex-shrink-0">
+              <div class="shrink-0">
                 <Gravatar 
                   email="robert.brown@example.com"
                   size={32}
