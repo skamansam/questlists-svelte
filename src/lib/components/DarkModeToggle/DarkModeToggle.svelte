@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { darkMode, toggleDarkMode } from '$lib/stores/darkMode';
+import { darkMode, toggleDarkMode } from "$lib/stores/darkMode";
 </script>
 
 <button

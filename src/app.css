@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 /* Mirror the legacy `darkMode: "class"` behavior so dark: utilities respond to the
    `.dark` class on <html> or any ancestor, including SSR-rendered markup. */
@@ -8,15 +8,15 @@
    - Forms: normalizes inputs/selects.
    - Typography: provides `.prose` for markdown renderers.
    - Aspect ratio + container queries: required by the media-heavy tiles. */
-@plugin '@tailwindcss/forms';
-@plugin '@tailwindcss/typography';
-@plugin '@tailwindcss/aspect-ratio';
-@plugin '@tailwindcss/container-queries';
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "@tailwindcss/container-queries";
 
 /* Theme tokens migrated from tailwind.config.ts. Any value defined here is available
    as both CSS variables (e.g. `var(--color-primary-500)`) and Tailwind utilities. */
 @theme {
-	--font-questlists: 'Questlists-Icons', sans-serif;
+	--font-questlists: "Questlists-Icons", sans-serif;
 
 	/* Primary color stack used for CTAs, highlighted stats, and accent gradients. */
 	--color-primary-50: #fffdf0;
@@ -135,17 +135,17 @@
 	--spacing-144: 36rem;
 
 	/* Custom inner shadow applied to cards with inset elevation. */
-	--shadow-inner-lg: inset 0 2px 4px 0 rgb(0 0 0 / 0.10);
+	--shadow-inner-lg: inset 0 2px 4px 0 rgb(0 0 0 / 0.1);
 }
 
 /* Icon font from Questlists design kit — needs to live outside @theme so browsers
    load it regardless of Tailwind compilation. */
 @font-face {
-	font-family: 'Questlists-Icons';
+	font-family: "Questlists-Icons";
 	src:
-		url('/QuestLists-font/QuestLists-Icons.woff2') format('woff2'),
-		url('/QuestLists-font/QuestLists-Icons.woff') format('woff'),
-		url('/QuestLists-font/QuestLists-Icons.ttf') format('truetype');
+		url("/QuestLists-font/QuestLists-Icons.woff2") format("woff2"),
+		url("/QuestLists-font/QuestLists-Icons.woff") format("woff"),
+		url("/QuestLists-font/QuestLists-Icons.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;

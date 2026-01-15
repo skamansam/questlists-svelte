@@ -1,7 +1,7 @@
 <script lang="ts">
-import type { AvailableLanguageTag } from "$lib/paraglide/runtime";
 import { goto } from "$app/navigation";
 import { m } from "$lib/paraglide/messages.js";
+import type { AvailableLanguageTag } from "$lib/paraglide/runtime";
 import { locales, localizeHref, setLocale } from "$lib/paraglide/runtime";
 
 function switchToLanguage(newLanguage: AvailableLanguageTag) {
