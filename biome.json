@@ -191,7 +191,7 @@
 			"bracketSameLine": true,
 			"quoteStyle": "double",
 			"attributePosition": "auto",
-			"bracketSpacing": true
+			"bracketSpacing": true,
 		},
 		"globals": [
 			"onanimationend",
@@ -333,7 +333,8 @@
 	"html": {
 		"formatter": {
 			"indentScriptAndStyle": false,
-			"selfCloseVoidElements": "always"
+			"selfCloseVoidElements": "always",
+			"attributePosition": "auto"
 		}
 	},
 	"overrides": [
