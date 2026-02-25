@@ -167,33 +167,33 @@ QuestLists supports multiple backend options for both file storage and database 
 
 The following file storage backends are supported for storing user-generated content, images, and other assets:
 
-| Backend | Free Tier | Pricing | Cost per GB (Cheapest) | Setup Complexity | Best For |
-|---------|-----------|---------|------------------------|------------------|----------|
-| **Supabase Storage** | 1 GB | Pay-as-you-go | $0.05/GB | Easy | Small to medium projects, integrated auth |
-| **AWS S3** | 12 months free (5 GB) | Pay-as-you-go | $0.023/GB | Medium | Large-scale, high-traffic applications |
-| **Google Cloud Storage** | 5 GB free | Pay-as-you-go | $0.020/GB | Medium | Google ecosystem integration, scalability |
-| **Azure Blob Storage** | 5 GB free | Pay-as-you-go | $0.0184/GB | Medium | Microsoft ecosystem, enterprise features |
-| **Cloudflare R2** | 10 GB free | Pay-as-you-go | $0.015/GB | Easy | Cost-effective, no egress fees |
-| **DigitalOcean Spaces** | None | $5/month + usage | $0.025/GB | Easy | Simplicity, affordable baseline |
-| **Backblaze B2** | 10 GB free | Pay-as-you-go | $0.006/GB | Easy | Most cost-effective option |
-| **MinIO (Self-hosted)** | Open source | Self-hosted costs | Varies | Hard | Full control, on-premises deployment |
+| Status | Backend | Free Tier | Pricing | Cost per GB (Cheapest) | Setup Complexity | Best For |
+|--------|---------|-----------|---------|------------------------|------------------|----------|
+| [ ] | **Supabase Storage** | 1 GB | Pay-as-you-go | $0.05/GB | Easy | Small to medium projects, integrated auth |
+| [ ] | **AWS S3** | 12 months free (5 GB) | Pay-as-you-go | $0.023/GB | Medium | Large-scale, high-traffic applications |
+| [ ] | **Google Cloud Storage** | 5 GB free | Pay-as-you-go | $0.020/GB | Medium | Google ecosystem integration, scalability |
+| [ ] | **Azure Blob Storage** | 5 GB free | Pay-as-you-go | $0.0184/GB | Medium | Microsoft ecosystem, enterprise features |
+| [ ] | **Cloudflare R2** | 10 GB free | Pay-as-you-go | $0.015/GB | Easy | Cost-effective, no egress fees |
+| [ ] | **DigitalOcean Spaces** | None | $5/month + usage | $0.025/GB | Easy | Simplicity, affordable baseline |
+| [ ] | **Backblaze B2** | 10 GB free | Pay-as-you-go | $0.006/GB | Easy | Most cost-effective option |
+| [ ] | **MinIO (Self-hosted)** | Open source | Self-hosted costs | Varies | Hard | Full control, on-premises deployment |
 
 #### Database Backends
 
 The following database backends are supported for storing application data and user information:
 
-| Backend | Type | Free Tier | Pricing | Startup Cost | Scalability | Best For |
-|---------|------|-----------|---------|--------------|-------------|----------|
-| **Firebase Realtime DB** | NoSQL | 100 MB storage | $1/GB stored | None | Good | Real-time sync, rapid prototyping |
-| **Supabase (PostgreSQL)** | SQL | 500 MB | $25/month | None | Excellent | Full-featured SQL, open source |
-| **Turso (SQLite Cloud)** | SQL | 9 GB | $29/month | None | Good | Edge computing, low latency |
-| **Turso (In-Browser)** | SQL | Unlimited | Free | None | Local only | Offline-first, no backend needed |
-| **PlanetScale (MySQL)** | SQL | 5 GB | $29/month | None | Excellent | MySQL compatibility, branching |
-| **SurrealDB** | Multi-model | Unlimited | $99/month | None | Excellent | Graph + document + time-series |
-| **MongoDB Atlas** | NoSQL | 512 MB | $57/month | None | Excellent | Document-oriented, flexible schema |
-| **Neon (PostgreSQL)** | SQL | 3 GB | $14/month | None | Excellent | Serverless PostgreSQL, auto-scaling |
-| **Fauna** | NoSQL | 100 MB | $25/month | None | Excellent | ACID transactions, multi-region |
-| **CockroachDB** | SQL | 5 GB free | $29/month | None | Excellent | Distributed SQL, high availability |
+| Status | Backend | Type | Free Tier | Pricing | Startup Cost | Scalability | Best For |
+|--------|---------|------|-----------|---------|--------------|-------------|----------|
+| [ ] | **Firebase Realtime DB** | NoSQL | 100 MB storage | $1/GB stored | None | Good | Real-time sync, rapid prototyping |
+| [ ] | **Supabase (PostgreSQL)** | SQL | 500 MB | $25/month | None | Excellent | Full-featured SQL, open source |
+| [ ] | **Turso (SQLite Cloud)** | SQL | 9 GB | $29/month | None | Good | Edge computing, low latency |
+| [ ] | **Turso (In-Browser)** | SQL | Unlimited | Free | None | Local only | Offline-first, no backend needed |
+| [ ] | **PlanetScale (MySQL)** | SQL | 5 GB | $29/month | None | Excellent | MySQL compatibility, branching |
+| [ ] | **SurrealDB** | Multi-model | Unlimited | $99/month | None | Excellent | Graph + document + time-series |
+| [ ] | **MongoDB Atlas** | NoSQL | 512 MB | $57/month | None | Excellent | Document-oriented, flexible schema |
+| [ ] | **Neon (PostgreSQL)** | SQL | 3 GB | $14/month | None | Excellent | Serverless PostgreSQL, auto-scaling |
+| [ ] | **Fauna** | NoSQL | 100 MB | $25/month | None | Excellent | ACID transactions, multi-region |
+| [ ] | **CockroachDB** | SQL | 5 GB free | $29/month | None | Excellent | Distributed SQL, high availability |
 
 #### Recommended Combinations
 
@@ -340,6 +340,31 @@ QuestLists is originally intended for game quests and will have the following fe
 * [ ] Advanced filtering and sorting
 * [ ] Custom list templates
 * [ ] Modular database backend support
+* [ ] Modular storage backend support
+
+### Modular Database Backend Support
+
+* [ ] Firebase Realtime DB
+* [ ] Supabase (PostgreSQL)
+* [ ] Turso (SQLite Cloud)
+* [ ] Turso (In-Browser)
+* [ ] PlanetScale (MySQL)
+* [ ] SurrealDB
+* [ ] MongoDB Atlas
+* [ ] Neon (PostgreSQL)
+* [ ] Fauna
+* [ ] CockroachDB
+
+### Modular Storage Backend Support
+
+* [ ] Supabase Storage
+* [ ] AWS S3
+* [ ] Google Cloud Storage
+* [ ] Azure Blob Storage
+* [ ] Cloudflare R2
+* [ ] DigitalOcean Spaces
+* [ ] Backblaze B2
+* [ ] MinIO (Self-hosted)
 
 
 <!-- Contributing -->
