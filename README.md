@@ -1,123 +1,3 @@
-# Questlists (svelte version)
-
-> A svelte version used to develop and test the Twintrinsic UI Library. These two are being developed alongside each other.
-
-[![Run Tests](https://github.com/BizziQuest/QuestListsFB/actions/workflows/PRtests.yml/badge.svg)](https://github.com/BizziQuest/QuestListsFB/actions/workflows/PRtests.yml)
-[![Last Deploy Status](https://github.com/BizziQuest/QuestListsFB/actions/workflows/deploy.yml/badge.svg)](https://github.com/BizziQuest/QuestListsFB/actions/workflows/deploy.yml)
-[![Gitpod Ready-to-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/BizziQuest/QuestListsFB) 
-
-# QuestLists
-
-QuestLists is a crowd-sourcing application that organizes lists of any sort. The crowd builds the lists, you say what
-you want to use from that list, and then use it as a normal checklist. At its heart, this is an _n_-state checklist
-application.
-
-The intention is to use the crowd to build lists for games, inventories, shopping, music, videos, and more! Once the
-lists are built and created, you can add/remove your items from them. It uses the browser's caching for data, so you
-don't even have to login to use it (only for the same devise)!
-
-NOTE: This is the frontend for QuestLists, with a firebase backend, by default. More backends will be developed
-separately.
-
-## Demo
-
-This is the public code for http://skamansam.github.io/questlists-svelte. The code is redeployed when I finish any feature or
-want to test something, so it may change a lot and may break down  often. I will do my best not to disturb any data
-that is already there, but be warned, your data may be a casualty of development!
-
-Once everything is stable, it will become a REAL application, and all the notices about the demo will be removed.
-
-## Roadmap
-
-Questlists is originally intended for game quests, so will have the following ideas implemented first:
-
-  1. Your progress in quests.
-  2. Items collected
-  3. Overall progress in the game
-  4. Locations reached
-  5. Information about any other object in the game
-
-I am sure you can generalize these ideas to fit any circumstance, so i will eventually create a few demos of lists for
-everyday use, such as a shopping list and various TODO lists.
-
-### Future Plans
-
-  1. A modular DB backend with firebase as the default so it can be deployed
-
-
-# Contributing
-
-To keep things simple, I am only using GitHub and associated tools that anyone can use. I am even deploying this app to
-GitHub pages. For ticket management, I am using ZenHub, so you can use it too, if you want. All tickets will be managed
-through ZenHub, but you can create Issues in GitHub if you want, as well.
-
-## GitHub
-
-If you would like to help with the development of this project, follow these instructions:
-```text
-TL;DR - Fork repo and create a new branch for each issue, then create a new pull request. I won't be too 
-harsh on the rest.
-```
-
-  1. fork this repo (or ask to join the BizziQuest team!)
-  2. See if there is an issue currently in GitHub that addresses your feature, bugfix, etc. If not, create one!
-  3. create a new branch in your forked repo, including the ticket number in the branch name, like `4-my-new-feature`
-     or `my-new-feature_issue-4` or `my_new_feature-issue_4`. You get the idea.
-  4. hack away!
-  5. When committing your changes, please make sure you include the ticket number in the description, surrounded b y
-     brackets. Something like `make sure we use the correct ES2016 syntax for foo-bar elements. [46]`. The commit
-     message should read like a command, not a summary of what you did. (This is a hard one to follow, as you can tell
-     from my commit messages, but it really does help new-comers get an understanding of what's going on.)
-  6. Make sure ALL tests run successfully by running `yarn check`. This is to ensure you do not bug the application.
-     Automated tests run for every PR and merge, and any code will not be merged without passing tests and linter
-     checks.
-  7. Create a new pull request against the develop branch once you are happy with your code
-  8. Wait for the team to review and merge the changes. Merges cannot happen without review.
-
-## App Setup
-We are using node version 10.x, due to compatibility with the firebase libraries. You should be using it as well. 
-You can [install nvm](https://github.com/nvm-sh/nvm) to manage local versions of node.
-
-```
-nvm use
-npm install -g yarn
-yarn
-yarn serve
-```
-
-## Running Questlists for Development
-
-Just run `yarn dev` or `yarn serve` from the repo's directory. Running the dev command will start a local firebase
-emulator for you to connect for testing and local development. 
-
-## Deploying Questlists
-
-You can set up your own firebase instance at https://firebase.google.com. From there, you can configure
-`firebaseConfig` in `main.js` with your project's name. You need to have the following environment variables for
-deploying to your firebase instance. You can put these in a `.env` file, or copy the `.env.example` file.
-
-```
-VITE_APP_FIREBASE_API_KEY
-VITE_APP_FIREBASE_AUTH_DOMAIN
-VITE_APP_FIREBASE_DATABASE_URL
-VITE_APP_FIREBASE_STORAGE_BUCKET
-VITE_APP_FIREBASE_MESSAGING_SENDER_ID
-VITE_APP_FIREBASE_APP_ID
-```
-
-
-## Code Style Guide
-Having a style guide really helps code readability and lessens cognitive overhead when developing software. I am using 
-the Airbnb rules for eslint, with a few differences:
-
-1. line length is 120 characters. the 80 char limit has not been applicable for more than 20 years.
-1. You ARE allowed to use `console.[error, info, warn]` in production code. The team will be looking at these to
-    determine whether they are used correctly and are necessary. You are not allowed to just `console.log`, as that
-    usually means you are not thinking about **why** you need to print to the browser console.
-
-NOTE: `eslint` is run as part of the testing for each PR so PRs will not be merged that don't pass the tests _and_
-       linter. If you want to run the linter yourself, you can run `yarn check`.
-
 <!--
 Hey, thanks for using the awesome-readme-template template.  
 If you have any enhancements, then fork this project and create a pull request 
@@ -128,44 +8,44 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Awesome Readme Template</h1>
+  <img src="src/assets/circle.svg" alt="logo" width="200" height="auto" />
+  <h1>Questlists (Svelte)</h1>
   
   <p>
-    An awesome README template for your projects! 
+    A Svelte version of Questlists used to develop and test the Twintrinsic UI Library. These two are being developed alongside each other.
   </p>
   
   
 <!-- Badges -->
 <p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
+  <a href="https://github.com/skamansam/questlists-svelte/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/skamansam/questlists-svelte" alt="contributors" />
   </a>
-  <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
+  <a href="https://github.com/skamansam/questlists-svelte">
+    <img src="https://img.shields.io/github/last-commit/skamansam/questlists-svelte" alt="last update" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+  <a href="https://github.com/skamansam/questlists-svelte/network/members">
+    <img src="https://img.shields.io/github/forks/skamansam/questlists-svelte" alt="forks" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
+  <a href="https://github.com/skamansam/questlists-svelte/stargazers">
+    <img src="https://img.shields.io/github/stars/skamansam/questlists-svelte" alt="stars" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
+  <a href="https://github.com/skamansam/questlists-svelte/issues/">
+    <img src="https://img.shields.io/github/issues/skamansam/questlists-svelte" alt="open issues" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
+  <a href="https://github.com/skamansam/questlists-svelte/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/skamansam/questlists-svelte.svg" alt="license" />
   </a>
 </p>
    
 <h4>
-    <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
+    <a href="https://skamansam.github.io/questlists-svelte">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template">Documentation</a>
+    <a href="https://github.com/skamansam/questlists-svelte">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Bug</a>
+    <a href="https://github.com/skamansam/questlists-svelte/issues/">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
+    <a href="https://github.com/skamansam/questlists-svelte/issues/">Request Feature</a>
   </h4>
 </div>
 
@@ -200,6 +80,11 @@ Maybe you can mention me or this repo in the acknowledgements too
 <!-- About the Project -->
 ## :star2: About the Project
 
+QuestLists is a crowd-sourcing application that organizes lists of any sort. The crowd builds the lists, you say what you want to use from that list, and then use it as a normal checklist. At its heart, this is an _n_-state checklist application.
+
+The intention is to use the crowd to build lists for games, inventories, shopping, music, videos, and more! Once the lists are built and created, you can add/remove your items from them. It uses the browser's caching for data, so you don't even have to login to use it (only for the same device)!
+
+**Note:** This is the frontend for QuestLists, with a Firebase backend by default. More backends will be developed separately.
 
 <!-- Screenshots -->
 ### :camera: Screenshots
@@ -213,75 +98,124 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :space_invader: Tech Stack
 
 <details>
-  <summary>Client</summary>
+  <summary>Frontend</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://nextjs.org/">Next.js</a></li>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-    <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
+    <li><a href="https://svelte.dev/">Svelte 5</a></li>
+    <li><a href="https://kit.svelte.dev/">SvelteKit</a></li>
+    <li><a href="https://www.typescriptlang.org/">TypeScript</a></li>
+    <li><a href="https://tailwindcss.com/">Tailwind CSS</a></li>
+    <li><a href="https://vite.dev/">Vite</a></li>
   </ul>
 </details>
 
 <details>
-  <summary>Server</summary>
+  <summary>Backend</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-    <li><a href="https://go.dev/">Golang</a></li>
-    <li><a href="https://nestjs.com/">Nest.js</a></li>
-    <li><a href="https://socket.io/">SocketIO</a></li>
-    <li><a href="https://www.prisma.io/">Prisma</a></li>    
-    <li><a href="https://www.apollographql.com/">Apollo</a></li>
-    <li><a href="https://graphql.org/">GraphQL</a></li>
+    <li><a href="https://firebase.google.com/">Firebase</a></li>
   </ul>
 </details>
 
 <details>
-<summary>Database</summary>
+<summary>Testing & Documentation</summary>
   <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://redis.io/">Redis</a></li>
-    <li><a href="https://neo4j.com/">Neo4j</a></li>
-    <li><a href="https://www.mongodb.com/">MongoDB</a></li>
+    <li><a href="https://playwright.dev/">Playwright</a></li>
+    <li><a href="https://vitest.dev/">Vitest</a></li>
+    <li><a href="https://storybook.js.org/">Storybook</a></li>
   </ul>
 </details>
 
 <details>
-<summary>DevOps</summary>
+<summary>Development Tools</summary>
   <ul>
-    <li><a href="https://www.docker.com/">Docker</a></li>
-    <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
+    <li><a href="https://pnpm.io/">pnpm</a></li>
+    <li><a href="https://biomejs.dev/">Biome</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 ### :dart: Features
 
-- Feature 1
-- Feature 2
-- Feature 3
-
-<!-- Color Reference -->
-### :art: Color Reference
-
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
-| Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
-| Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
-| Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
-
+- Crowd-sourced list creation and management
+- Multi-state checklist functionality (track progress beyond simple done/not done)
+- Browser caching for offline list usage
+- No login required for basic usage (data persists on device)
+- Game quest tracking, inventory management, shopping lists, and more
+- Responsive design with Tailwind CSS
+- Fully typed with TypeScript
+- Comprehensive test coverage with Playwright and Vitest
 
 <!-- Env Variables -->
 ### :key: Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
+To run this project, you will need to add the following environment variables to your `.env` file. Copy `.env.example` to get started:
 
-`API_KEY`
+```
+VITE_APP_FIREBASE_API_KEY
+VITE_APP_FIREBASE_AUTH_DOMAIN
+VITE_APP_FIREBASE_DATABASE_URL
+VITE_APP_FIREBASE_STORAGE_BUCKET
+VITE_APP_FIREBASE_MESSAGING_SENDER_ID
+VITE_APP_FIREBASE_APP_ID
+```
 
-`ANOTHER_API_KEY`
+<!-- Backend Configuration -->
+### :gear: Backend Configuration
+
+QuestLists supports multiple backend options for both file storage and database operations. Choose the backends that best fit your needs.
+
+#### File Storage Backends
+
+The following file storage backends are supported for storing user-generated content, images, and other assets:
+
+| Backend | Free Tier | Pricing | Cost per GB (Cheapest) | Setup Complexity | Best For |
+|---------|-----------|---------|------------------------|------------------|----------|
+| **Supabase Storage** | 1 GB | Pay-as-you-go | $0.05/GB | Easy | Small to medium projects, integrated auth |
+| **AWS S3** | 12 months free (5 GB) | Pay-as-you-go | $0.023/GB | Medium | Large-scale, high-traffic applications |
+| **Google Cloud Storage** | 5 GB free | Pay-as-you-go | $0.020/GB | Medium | Google ecosystem integration, scalability |
+| **Azure Blob Storage** | 5 GB free | Pay-as-you-go | $0.0184/GB | Medium | Microsoft ecosystem, enterprise features |
+| **Cloudflare R2** | 10 GB free | Pay-as-you-go | $0.015/GB | Easy | Cost-effective, no egress fees |
+| **DigitalOcean Spaces** | None | $5/month + usage | $0.025/GB | Easy | Simplicity, affordable baseline |
+| **Backblaze B2** | 10 GB free | Pay-as-you-go | $0.006/GB | Easy | Most cost-effective option |
+| **MinIO (Self-hosted)** | Open source | Self-hosted costs | Varies | Hard | Full control, on-premises deployment |
+
+#### Database Backends
+
+The following database backends are supported for storing application data and user information:
+
+| Backend | Type | Free Tier | Pricing | Startup Cost | Scalability | Best For |
+|---------|------|-----------|---------|--------------|-------------|----------|
+| **Firebase Realtime DB** | NoSQL | 100 MB storage | $1/GB stored | None | Good | Real-time sync, rapid prototyping |
+| **Supabase (PostgreSQL)** | SQL | 500 MB | $25/month | None | Excellent | Full-featured SQL, open source |
+| **Turso (SQLite Cloud)** | SQL | 9 GB | $29/month | None | Good | Edge computing, low latency |
+| **Turso (In-Browser)** | SQL | Unlimited | Free | None | Local only | Offline-first, no backend needed |
+| **PlanetScale (MySQL)** | SQL | 5 GB | $29/month | None | Excellent | MySQL compatibility, branching |
+| **SurrealDB** | Multi-model | Unlimited | $99/month | None | Excellent | Graph + document + time-series |
+| **MongoDB Atlas** | NoSQL | 512 MB | $57/month | None | Excellent | Document-oriented, flexible schema |
+| **Neon (PostgreSQL)** | SQL | 3 GB | $14/month | None | Excellent | Serverless PostgreSQL, auto-scaling |
+| **Fauna** | NoSQL | 100 MB | $25/month | None | Excellent | ACID transactions, multi-region |
+| **CockroachDB** | SQL | 5 GB free | $29/month | None | Excellent | Distributed SQL, high availability |
+
+#### Recommended Combinations
+
+**For Rapid Prototyping:**
+- Database: Firebase Realtime DB (free tier)
+- Storage: Supabase Storage (1 GB free)
+
+**For Production (Cost-Conscious):**
+- Database: Neon PostgreSQL ($14/month)
+- Storage: Cloudflare R2 (10 GB free, then $0.015/GB)
+
+**For Enterprise Scale:**
+- Database: PlanetScale or CockroachDB
+- Storage: AWS S3 or Google Cloud Storage
+
+**For Privacy-First (Self-Hosted):**
+- Database: SurrealDB (self-hosted)
+- Storage: MinIO (self-hosted)
+
+**For Edge Computing:**
+- Database: Turso (SQLite Cloud)
+- Storage: Cloudflare R2
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
@@ -289,140 +223,213 @@ To run this project, you will need to add the following environment variables to
 <!-- Prerequisites -->
 ### :bangbang: Prerequisites
 
-This project uses Yarn as package manager
+This project uses `pnpm` as the package manager. Install it globally:
 
 ```bash
- npm install --global yarn
+npm install --global pnpm
+```
+
+You should also use Node.js version specified in `.nvmrc`. You can use [nvm](https://github.com/nvm-sh/nvm) to manage local versions:
+
+```bash
+nvm use
 ```
 
 <!-- Installation -->
 ### :gear: Installation
 
-Install my-project with npm
-
-```bash
-  yarn install my-project
-  cd my-project
-```
-   
-<!-- Running Tests -->
-### :test_tube: Running Tests
-
-To run tests, run the following command
-
-```bash
-  yarn test test
-```
-
-<!-- Run Locally -->
-### :running: Run Locally
-
 Clone the project
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
-```
-
-Go to the project directory
-
-```bash
-  cd my-project
+git clone https://github.com/skamansam/questlists-svelte.git
+cd questlists-svelte
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+pnpm install
 ```
 
-Start the server
+Set up environment variables by copying the example file:
 
 ```bash
-  yarn start
+cp .env.example .env
 ```
 
+Then fill in your Firebase configuration in the `.env` file.
+
+<!-- Run Locally -->
+### :running: Run Locally
+
+Start the development server
+
+```bash
+pnpm dev
+```
+
+The app will be available at `http://localhost:5173`
+
+<!-- Running Tests -->
+### :test_tube: Running Tests
+
+Run all tests (unit + e2e):
+
+```bash
+pnpm test
+```
+
+Run unit tests only:
+
+```bash
+pnpm test:unit
+```
+
+Run e2e tests only:
+
+```bash
+pnpm test:e2e
+```
 
 <!-- Deployment -->
 ### :triangular_flag_on_post: Deployment
 
-To deploy this project run
+Build the project for production:
 
 ```bash
-  yarn deploy
+pnpm build
 ```
+
+Preview the production build locally:
+
+```bash
+pnpm preview
+```
+
+The app is deployed to GitHub Pages at https://skamansam.github.io/questlists-svelte
 
 
 <!-- Usage -->
 ## :eyes: Usage
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
+QuestLists is designed to be intuitive and easy to use:
 
+1. **Browse or Create Lists** – Explore crowd-sourced lists or create your own
+2. **Select Items** – Choose which items from a list you want to track
+3. **Track Progress** – Mark items with multi-state progress (not started, in progress, completed, etc.)
+4. **Offline Support** – Your progress is saved locally in your browser, no login required
+5. **Sync to Cloud** – Optionally create an account and sync your data across devices
 
-```javascript
-import Component from 'my-project'
-
-function App() {
-  return <Component />
-}
-```
+The app works great for:
+- Game quest tracking
+- Shopping lists
+- Inventory management
+- TODO lists
+- Music/video playlists
+- And much more!
 
 <!-- Roadmap -->
 ## :compass: Roadmap
 
-* [x] Todo 1
-* [ ] Todo 2
+QuestLists is originally intended for game quests and will have the following features implemented:
+
+* [x] Multi-state checklist functionality
+* [x] Browser caching for offline usage
+* [x] Crowd-sourced list creation
+* [ ] User accounts and cloud sync
+* [ ] Advanced filtering and sorting
+* [ ] Custom list templates
+* [ ] Modular database backend support
 
 
 <!-- Contributing -->
 ## :wave: Contributing
 
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
+<a href="https://github.com/skamansam/questlists-svelte/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=skamansam/questlists-svelte" />
 </a>
 
+Contributions are always welcome! To keep things simple, we use GitHub and associated tools that anyone can use.
 
-Contributions are always welcome!
+### Getting Started with Contributing
 
-See `contributing.md` for ways to get started.
+1. **Fork the repo** or ask to join the team
+2. **Check for existing issues** – See if there's already an issue for your feature/bugfix. If not, create one!
+3. **Create a branch** – Include the issue number in your branch name (e.g., `4-my-new-feature` or `my-new-feature-issue-4`)
+4. **Make your changes** – Hack away!
+5. **Commit with issue reference** – Include the issue number in your commit message (e.g., `Add feature for foo-bar elements. [46]`). Commit messages should read like commands, not summaries.
+6. **Run tests** – Ensure all tests pass before submitting:
+   ```bash
+   pnpm test
+   pnpm check
+   pnpm lint
+   ```
+7. **Create a pull request** – Submit against the main branch. All PRs require review before merging.
 
+### Code Style Guide
+
+- **Line length**: 120 characters (the 80 char limit hasn't been applicable for 20+ years)
+- **Console usage**: You ARE allowed to use `console.[error, info, warn]` in production code. Use them thoughtfully and only when necessary.
+- **Linting**: ESLint and Prettier checks are run on every PR. Your code must pass these checks to be merged.
+
+Run the linter yourself:
+```bash
+pnpm lint
+```
 
 <!-- Code of Conduct -->
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/skamansam/questlists-svelte/blob/main/CODE_OF_CONDUCT.md)
 
 <!-- FAQ -->
 ## :grey_question: FAQ
 
-- Question 1
+- **Do I need to create an account to use QuestLists?**
 
-  + Answer 1
+  + No! You can use QuestLists without creating an account. Your progress is saved locally in your browser. Creating an account allows you to sync your data across devices.
 
-- Question 2
+- **Will my data be lost if I clear my browser cache?**
 
-  + Answer 2
+  + Yes, if you're using local storage without an account. If you create an account and sync to Firebase, your data will be preserved.
+
+- **Can I contribute lists to the community?**
+
+  + Yes! That's the core idea of QuestLists. You can create and share lists for others to use.
+
+- **What if I find a bug?**
+
+  + Please report it on our [GitHub Issues](https://github.com/skamansam/questlists-svelte/issues/) page. Include steps to reproduce and any error messages.
 
 
 <!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/skamansam/questlists-svelte/blob/main/LICENSE) for more information.
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+For questions, suggestions, or feedback:
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+- **GitHub Issues**: [Report bugs or request features](https://github.com/skamansam/questlists-svelte/issues/)
+- **Project Link**: [https://github.com/skamansam/questlists-svelte](https://github.com/skamansam/questlists-svelte)
+- **Live Demo**: [https://skamansam.github.io/questlists-svelte](https://skamansam.github.io/questlists-svelte)
 
 
 <!-- Acknowledgments -->
 ## :gem: Acknowledgements
 
-Use this section to mention useful resources and libraries that you have used in your projects.
+This project is built with and uses resources from:
 
- - [Shields.io](https://shields.io/)
- - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
- - [Readme Template](https://github.com/othneildrew/Best-README-Template)
+- [Svelte](https://svelte.dev/) - The reactive JavaScript framework
+- [SvelteKit](https://kit.svelte.dev/) - The web app framework
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [Firebase](https://firebase.google.com/) - Backend services
+- [Playwright](https://playwright.dev/) - E2E testing
+- [Vitest](https://vitest.dev/) - Unit testing
+- [Storybook](https://storybook.js.org/) - Component documentation
+- [Twintrinsic](https://github.com/skamansam/twintrinsic) - UI component library
+- [Shields.io](https://shields.io/) - Badge generation
+- [Awesome README](https://github.com/matiassingers/awesome-readme) - README inspiration
