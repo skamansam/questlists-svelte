@@ -1,18 +1,33 @@
-<div class="dark:bg-dark-bg-200 left-nav-visible right-nav-visible bg-light-surface-200 dark:bg-dark-surface-200 antialiased">
-	<slot name="header" />
-	<!-- Sidebar -->
+<script lang="ts">
+	import { App as TwintrinsicApp } from "twintrinsic";
+	import type { Snippet } from "svelte";
 
-	<aside
-		class="bg-surface-300 fixed left-0 top-0 z-40 h-screen w-64 -translate-x-full border-r border-neutral-200 pt-14 transition-transform dark:border-dark-border-100 dark:bg-dark-surface-300 md:translate-x-0"
-		aria-label="Sidenav"
-		id="drawer-navigation"
-	>
-		<slot name="sidebar" />
-	</aside>
+	interface Props {
+		darkMode?: boolean;
+		appName?: string;
+		header?: Snippet;
+		sidebar?: Snippet;
+		children?: Snippet;
+	}
 
-	<main class="h-full p-4 pt-20 md:ml-64">
-		<div class="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-			<slot />
-		</div>
-	</main>
-</div>
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	let { darkMode = false, appName = "Questlists", header, sidebar, children }: Props = $props();
+</script>
+
+<TwintrinsicApp {darkMode} {appName} leftPanelWidth="20rem" menu={null} header={null} footer={null} leftPanel={null} rightPanel={null}>
+	{#if header}
+		{#snippet header()}
+			{@render header?.()}
+		{/snippet}
+	{/if}
+
+	{#if sidebar}
+		{#snippet leftPanel()}
+			{@render sidebar?.()}
+		{/snippet}
+	{/if}
+
+	<div class="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+		{@render children?.()}
+	</div>
+</TwintrinsicApp>

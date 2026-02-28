@@ -8,7 +8,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <img src="src/assets/circle.svg" alt="logo" width="200" height="auto" />
+  <img src="src/assets/questlists.svg" alt="logo" width="200" height="auto" currentColor="gold" style="color: gold;"/>
   <h1>Questlists (Svelte)</h1>
   
   <p>

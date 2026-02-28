@@ -378,8 +378,8 @@
       "linter": {
         "rules": {
           "correctness": {
-            "noInnerDeclarations": "off",
-            "noSelfAssign": "off"
+            "noUnusedVariables": "off",
+            "noUnusedImports": "off"
           }
         }
       }

@@ -11,51 +11,73 @@ import { visualizer } from "rollup-plugin-visualizer";
 import { defineConfig } from "vitest/config";
 
 const dirname =
-	typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url));
+  typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
-	plugins: [
-		tailwindcss(),
-		paraglideVitePlugin({
-			project: "./project.inlang",
-			outdir: "./src/lib/paraglide",
-			strategy: ["url", "cookie", "baseLocale"],
-		}),
-		sveltekit(),
-		visualizer({
-			filename: "stats.html",
-			emitFile: true,
-			template: "flamegraph",
-		}),
-	],
-	test: {
-		include: ["src/**/*.{test,spec}.{js,ts}"],
-		projects: [
-			{
-				extends: true,
-				plugins: [
-					// The plugin will run tests for the stories defined in your Storybook config
-					// See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
-					storybookTest({
-						configDir: path.join(dirname, ".storybook"),
-					}),
-				],
-				test: {
-					name: "storybook",
-					browser: {
-						enabled: true,
-						headless: true,
-						provider: playwright({}),
-						instances: [
-							{
-								browser: "chromium",
-							},
-						],
-					},
-					setupFiles: [".storybook/vitest.setup.ts"],
-				},
-			},
-		],
-	},
+  resolve: {
+    alias: {
+      "twintrinsic": path.resolve(dirname, "../twintrinsic/src/lib/index.ts"),
+    },
+  },
+  server: {
+    watch: {
+      // Ignore everything by default, except specified paths
+      ignored: [
+        "!**", // Ignore all files
+        "!**/src/**", // But don't ignore files in the 'src' directory
+        "!**/vite.config.js", // Or the config file
+        // Add your external directory here (adjust 'external-dir' and path depth as needed)
+        // "!" + path.resolve(__dirname, "..", "twintrinsic") + "/**",
+        "!**/../twintrinsic/**",
+        "!../twintrinsic/**",
+      ],
+    },
+    fs: {
+      allow: [path.resolve(dirname, "../twintrinsic")],
+    },
+  },
+  plugins: [
+    tailwindcss(),
+    paraglideVitePlugin({
+      project: "./project.inlang",
+      outdir: "./src/lib/paraglide",
+      strategy: ["url", "cookie", "baseLocale"],
+    }),
+    sveltekit(),
+    visualizer({
+      filename: "stats.html",
+      emitFile: true,
+      template: "flamegraph",
+    }),
+  ],
+  test: {
+    include: ["src/**/*.{test,spec}.{js,ts}"],
+    projects: [
+      {
+        extends: true,
+        plugins: [
+          // The plugin will run tests for the stories defined in your Storybook config
+          // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
+          storybookTest({
+            configDir: path.join(dirname, ".storybook"),
+          }),
+        ],
+        test: {
+          name: "storybook",
+          browser: {
+            enabled: true,
+            headless: true,
+            provider: playwright({}),
+            instances: [
+              {
+                browser: "chromium",
+              },
+            ],
+          },
+          setupFiles: [".storybook/vitest.setup.ts"],
+        },
+      },
+    ],
+  },
 });
