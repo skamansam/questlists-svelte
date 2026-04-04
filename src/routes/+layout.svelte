@@ -1,6 +1,6 @@
 <script lang="ts">
 import "../app.css";
-import { App, Sidebar, type MenuItem, Footer } from "twintrinsic";
+import { App, Footer, type MenuItem, Sidebar } from "twintrinsic";
 import AppHeader from "$lib/components/AppHeader/AppHeader.svelte";
 
 let { children } = $props();
