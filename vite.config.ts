@@ -14,10 +14,14 @@ const dirname =
   typeof __dirname !== "undefined" ? __dirname : path.dirname(fileURLToPath(import.meta.url));
 
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
-export default defineConfig({
+export default defineConfig(({ command }) => ({
   resolve: {
     alias: {
-      "twintrinsic": path.resolve(dirname, "../twintrinsic/src/lib/index.ts"),
+      // In dev, use the local twintrinsic source for hot reload.
+      // In build (production), fall back to the npm/GitHub dependency.
+      ...(command === "serve"
+        ? { "twintrinsic": path.resolve(dirname, "../twintrinsic/src/lib/index.ts") }
+        : {}),
     },
   },
   server: {
@@ -80,4 +84,4 @@ export default defineConfig({
       },
     ],
   },
-});
+}));
